@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mlcpay:
+    container_name: mlcpay
+    build: .
+    command: yarn docker:startup
+    volumes:
+      - .:/usr/app/
+    environment:
+      - PORT=8080
+      - HOST=0.0.0.0
+      - PROJECT_DIR=/usr/app/
+      - NODE_ENV=development
+      - LOG_LEVEL=debug
+      - SECRET=MiaowMiaow
+      - PROTOCOL=http
+    ports:
+      - "8080:8080"

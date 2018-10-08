@@ -1,0 +1,9 @@
+.idea
+node_modules
+dist
+logs/*.log
+coverage/
+yarn-error.log
+data/*
+.env
+*.pem

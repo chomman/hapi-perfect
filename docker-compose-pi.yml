@@ -1,0 +1,23 @@
+
+version: '3'
+services:
+  api:
+    container_name: api
+    build: .
+    command: yarn docker:startup
+    volumes:
+      - .:/usr/app/
+    environment:
+      - PORT=8080
+      - HOST=0.0.0.0
+      - PROJECT_DIR=/usr/app/
+      - NODE_ENV=development
+      - LOG_LEVEL=debug
+      - SECRET=MiaowMiaow
+      - PROTOCOL=http
+      - DB_HOST=mysql
+      - DB_USER=mlcpay
+      - DB_PASSWORD=test123
+      - DB_NAME=mlcpay
+    ports:
+      - "8080:8080"
